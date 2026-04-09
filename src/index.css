@@ -1,0 +1,78 @@
+/* 1. THEME VARIABLES */
+:root {
+  --text: #6b6375;
+  --text-h: #08060d;
+  --bg: #fff;
+  --border: #e5e4e7;
+  --accent: #aa3bff;
+  --accent-bg: rgba(170, 59, 255, 0.1);
+  --mono: ui-monospace, Consolas, monospace;
+  --sans: system-ui, 'Segoe UI', Roboto, sans-serif;
+
+  font: 18px/145% var(--sans);
+  background: var(--bg);
+  color: var(--text);
+}
+
+/* 2. THE TOP-LEFT RESET */
+body {
+  max-width: 1250px;
+  margin: 0 auto;
+  /* margin: 0;
+  padding: 0; */
+  display: block; /* Removes any flex centering */
+}
+
+#root {
+  /* This ensures it aligns to the top-left until the screen hits 1250px */
+  max-width: 1250px; 
+  margin: 0 auto 0 0; /* Top, Right, Bottom, Left -> Left aligned */
+  
+  /* Removes forced vertical centering and internal padding */
+  display: block; 
+  text-align: left; /* Changes text from center to natural left-align */
+  padding: 0; 
+  box-sizing: border-box;
+}
+
+/* 3. ESSENTIALS (Minimal Styling) */
+h1, h2, p {
+  margin: 0;
+  padding: 1rem 0; /* Gives some basic separation so text isn't glued together */
+}
+
+h1 {
+  font-size: 56px;
+  color: var(--text-h);
+}
+
+/* The Counter: Essential interactive feature */
+.counter {
+  font-family: var(--mono);
+  padding: 8px 12px;
+  background: var(--accent-bg);
+  color: var(--accent);
+  border: 1px solid transparent;
+  border-radius: 4px;
+  cursor: pointer;
+  display: inline-block;
+  margin: 10px 0;
+}
+
+/* Keep focus states for accessibility */
+.counter:focus-visible {
+  outline: 2px solid var(--accent);
+  outline-offset: 2px;
+}
+
+/* 4. BREAKPOINTS */
+@media (max-width: 1250px) {
+  #root {
+    margin: 0; /* Remove auto margin on smaller screens */
+    padding: 0 15px; /* Tiny bit of safety padding for mobile edges */
+  }
+}
+
+@media (max-width: 1024px) {
+  h1 { font-size: 36px; }
+}

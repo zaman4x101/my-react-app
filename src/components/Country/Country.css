@@ -1,0 +1,86 @@
+.country-card {
+    background: white;
+    border-radius: 20px;
+    overflow: hidden;
+    box-shadow: 0 10px 20px rgba(0,0,0,0.1);
+    transition: all 0.3s ease;
+    cursor: pointer;
+    padding: 20px;
+    text-align: center;
+    border: 1px solid rgba(255,255,255,0.3);
+    backdrop-filter: blur(10px);
+}
+
+.country-card:hover {
+    transform: translateY(-10px);
+    box-shadow: 0 15px 30px rgba(0,0,0,0.2);
+}
+
+.country-card img {
+    width: 120px;
+    height: auto;
+    border-radius: 12px;
+    box-shadow: 0 4px 8px rgba(0,0,0,0.2);
+    margin-bottom: 15px;
+    transition: transform 0.3s ease;
+}
+
+.country-card:hover img {
+    transform: scale(1.05);
+}
+
+.country-card p {
+    font-size: 1.2rem;
+    font-weight: 600;
+    color: #2c3e50;
+    margin: 10px 0;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+
+/* Optional: Add a gradient border effect */
+.country-card {
+    position: relative;
+    background: linear-gradient(135deg, #ffffff 0%, #f8f9fa 100%);
+}
+
+.country-card::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    height: 5px;
+    background: linear-gradient(90deg, #667eea 0%, #764ba2 100%);
+    border-radius: 20px 20px 0 0;
+}
+
+/* Optional: Add loading animation */
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+        transform: translateY(20px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+.country-card {
+    animation: fadeIn 0.5s ease-out;
+}
+
+/* NEW STYLES FOR VISITED CARD */
+.country-card.visited {
+    background: linear-gradient(135deg, #a8edea 0%, #fed6e3 100%);
+    border: 2px solid #4CAF50;
+    box-shadow: 0 10px 20px rgba(76, 175, 80, 0.3);
+}
+
+.country-card.visited::before {
+    background: linear-gradient(90deg, #4CAF50 0%, #45a049 100%);
+}
+
+.country-card.visited .visit-card-btn {
+    background: linear-gradient(135deg, #4CAF50 0%, #45a049 100%);
+}
